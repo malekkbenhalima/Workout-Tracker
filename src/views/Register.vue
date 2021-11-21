@@ -22,7 +22,7 @@
       </div>
 
       <div class="flex flex-col mb-2">
-        <label for="password" class="mb-1 text-sm text-at-light-green">Email</label>
+        <label for="password" class="mb-1 text-sm text-at-light-green">Password</label>
         <input
             type="text"
             required
@@ -33,7 +33,7 @@
       </div>
 
       <div class="flex flex-col mb-2">
-        <label for="ConfirmPassword" class="mb-1 text-sm text-at-light-green">Email</label>
+        <label for="ConfirmPassword" class="mb-1 text-sm text-at-light-green">Confirm Password</label>
         <input
             type="password"
             required
