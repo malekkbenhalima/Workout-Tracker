@@ -24,7 +24,7 @@
       <div class="flex flex-col mb-2">
         <label for="password" class="mb-1 text-sm text-at-light-green">Password</label>
         <input
-            type="text"
+            type="password"
             required
             class="p-2 text-gray-500 focus:outline-none"
             id="password"
