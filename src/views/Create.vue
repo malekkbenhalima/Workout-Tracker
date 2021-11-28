@@ -111,7 +111,7 @@
           </button>
         </div>
 
-        <button type="submit" class="mt-6 py-2 px-6 rounded-sm self-start text-sm
+        <button @submit.prevent="createWorkout" type="submit" class="mt-6 py-2 px-6 rounded-sm self-start text-sm
             text-white bg-at-light-green duration-200 border-solid
             border-2 border-transparent hover:border-at-light-green hover:bg-white
             hover:text-at-light-green">Record Workout
@@ -123,6 +123,7 @@
 <script>
 import {ref} from "vue";
 import {uid} from "uid"
+import {supabase} from "../supabase/init";
 
 export default {
   name: "create",
@@ -155,7 +156,6 @@ export default {
       })
     }
 
-
     // Listen for changing of workout type input
     const workoutChange = () => {
       exercises.value = [];
@@ -173,9 +173,35 @@ export default {
         errorMsg.value = false;
       }, 5000)
     }
-    // Create workout
 
-    return {workoutName, workoutType, exercises, statusMsg, errorMsg, addExercise, workoutChange, deleteExercise};
+    // Create workout
+    const createWorkout = async () => {
+      try {
+        const {error} = await supabase.from('workouts').insert([
+          {
+            workoutName: workoutName.value,
+            workoutType: workoutType.value,
+            exercises: exercises.value
+          }
+        ]);
+        if (error) throw error;
+        statusMsg.value = 'Success: Workout Created!'
+        workoutName.value = null;
+        workoutType.value = "select-workout";
+        exercises.value = [];
+        setTimeout(() => {
+          statusMsg.value = false;
+        }, 5000)
+      }
+      catch(error) {
+        errorMsg.value = `Error: ${error.message()}`
+        setTimeout(() => {
+          errorMsg.value = false;
+        }, 5000)
+      }
+    }
+
+    return {workoutName, workoutType, exercises, statusMsg, errorMsg, addExercise, workoutChange, deleteExercise, createWorkout};
   },
 };
 </script>
