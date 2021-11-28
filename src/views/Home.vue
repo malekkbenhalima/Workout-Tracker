@@ -14,7 +14,7 @@
       <router-link class="flex flex-col items-center bg-light-grey p-8 shadow-md cursor-pointer" :to="{name: 'View-Workout', params: {workoutId: workout.id}}" v-for="(workout,index) in data" :key="index">
 
         <!-- Cardio Img -->
-        <img v-if="workout.workoutType === 'cardio'" src="../assets/images/running-light-green.png" alt="" class="h-25 w-auto">
+        <img v-if="workout.workoutType === 'cardio'" src="../assets/images/running-light-green.png" alt="" class="h-24 w-auto">
 
         <!-- Strength Training -->
         <img v-else src="../assets/images/dumbbell-light-green.png" alt="" class="h-24 w-auto">
