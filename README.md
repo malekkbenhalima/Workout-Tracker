@@ -1,4 +1,6 @@
-# workout_tracker
+# Workout Tracker
+
+Workout tracker app with authentication using Vue.js 3, Tailwind CSS Composition API and Supabase for backend.
 
 ## Project setup
 ```
