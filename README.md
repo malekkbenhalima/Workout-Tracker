@@ -2,10 +2,8 @@
 
 Workout tracker app with authentication using Vue.js 3, Tailwind CSS Composition API and Supabase for backend.
 
-## Live Preview
-```
-https://6208ec4700f5842a0f831427--unruffled-carson-3eb3f7.netlify.app
-```
+## Live Preview : [https://workout-tracker-vue.netlify.app](https://workout-tracker-vue.netlify.app)
+
 
 ## Project setup
 ```
@@ -25,7 +23,3 @@ npm run build
 ### Lints and fixes files
 ```
 npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
