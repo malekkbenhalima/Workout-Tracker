@@ -86,7 +86,8 @@ export default {
           const {error} = await supabase.auth.signUp({
             email: email.value,
             password: password.value,
-          });
+          },
+          {redirectTo: window.location.origin});
           if (error) throw error;
           router.push({name: "Login"});
         } catch (error) {
